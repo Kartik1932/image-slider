@@ -1,3 +1,20 @@
+async function loadCarousel() {
+    const res = await fetch("http://localhost:3000/images");
+    const data = res.json();
+
+    const imagesContainer = document.querySelector(".carousel-images");
+    imagesContainer.innerHTML = "";
+
+    data.images.forEach(src => {
+        const img = document.createElement("img");
+        img.src = src;
+        imagesContainer.appendChild(img);
+    });
+
+    initCarousel();
+}
+
+function initCarousel() {
 const carouselImages = document.querySelector(".carousel-images");
 const images = document.querySelectorAll(".carousel-images img");
 const prevBtn = document.querySelector(".prev");
@@ -42,3 +59,6 @@ prevBtn.addEventListener("click", () => {
     }
     showImage();
 })
+}
+
+loadCarousel();
