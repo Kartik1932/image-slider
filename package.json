@@ -16,5 +16,8 @@
     "url": "https://github.com/Kartik1932/image-slider/issues"
   },
   "homepage": "https://github.com/Kartik1932/image-slider#readme",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
 }
